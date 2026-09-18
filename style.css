@@ -972,3 +972,409 @@ html, body {
     animation-duration: 0.001s !important;
   }
 }
+/* ═══════════════════════════════════════
+   СТРУКТУРА БАТАЛЬОНА (карточки рот)
+   ═══════════════════════════════════════ */
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.company-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 30px 22px;
+  background: linear-gradient(180deg,
+    rgba(20, 30, 55, 0.55) 0%,
+    rgba(10, 15, 30, 0.7) 100%);
+  border: 1px solid rgba(120, 200, 255, 0.2);
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardAppear 1s ease-out forwards;
+}
+.company-card:nth-child(1) { animation-delay: 0.2s; }
+.company-card:nth-child(2) { animation-delay: 0.4s; }
+.company-card:nth-child(3) { animation-delay: 0.6s; }
+.company-card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes cardAppear {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.company-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(115deg,
+    transparent 0%,
+    rgba(140, 210, 255, 0.12) 50%,
+    transparent 100%);
+  transition: left 0.9s ease;
+  pointer-events: none;
+}
+.company-card:hover::before { left: 130%; }
+
+.company-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(140, 210, 255, 0.5);
+  box-shadow:
+    0 0 40px rgba(120, 200, 255, 0.3),
+    inset 0 0 30px rgba(100, 180, 255, 0.1);
+}
+
+.company-emblem {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(60, 130, 220, 0.15) 0%, rgba(10, 15, 30, 0.5) 100%);
+  border: 2px solid rgba(120, 200, 255, 0.3);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+  box-shadow:
+    0 0 20px rgba(80, 170, 255, 0.2),
+    inset 0 0 30px rgba(60, 130, 220, 0.15);
+}
+.company-card:hover .company-emblem {
+  transform: scale(1.06);
+  border-color: rgba(140, 210, 255, 0.7);
+  box-shadow:
+    0 0 35px rgba(120, 200, 255, 0.5),
+    inset 0 0 40px rgba(100, 180, 255, 0.25);
+}
+.company-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: filter 0.5s ease;
+  filter: brightness(0.95) contrast(1.05);
+}
+.company-card:hover .company-emblem img {
+  filter: brightness(1.15) contrast(1.1) saturate(1.15);
+}
+
+.company-name {
+  margin: 0 0 14px 0;
+  font-family: 'Georgia', serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #dce8f5;
+  text-shadow: 0 0 12px rgba(140, 210, 255, 0.6);
+  transition: all 0.4s ease;
+}
+.company-card:hover .company-name {
+  color: #ffffff;
+  text-shadow:
+    0 0 15px rgba(180, 220, 255, 1),
+    0 0 30px rgba(120, 190, 255, 0.7);
+}
+
+.company-desc {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.7;
+  color: #7a8a9e;
+  text-align: left;
+  transition: color 0.4s ease;
+}
+.company-card:hover .company-desc {
+  color: #a8c0d8;
+}
+
+/* цвета карточек */
+.company-card.cerberus:hover .company-emblem {
+  border-color: rgba(120, 200, 255, 0.9);
+  box-shadow: 0 0 40px rgba(120, 200, 255, 0.7), inset 0 0 40px rgba(100, 180, 255, 0.3);
+}
+.company-card.cerberus:hover .company-name {
+  color: #cce4ff;
+}
+.company-card.fenrir:hover .company-emblem {
+  border-color: rgba(140, 230, 110, 0.9);
+  box-shadow: 0 0 40px rgba(140, 230, 110, 0.7), inset 0 0 40px rgba(120, 200, 90, 0.3);
+}
+.company-card.fenrir:hover .company-name {
+  color: #ccffdc;
+}
+.company-card.moon:hover .company-emblem {
+  border-color: rgba(190, 120, 255, 0.9);
+  box-shadow: 0 0 40px rgba(190, 120, 255, 0.7), inset 0 0 40px rgba(150, 80, 230, 0.3);
+}
+.company-card.moon:hover .company-name {
+  color: #e4ccff;
+}
+.company-card.hunter:hover .company-emblem {
+  border-color: rgba(240, 210, 100, 0.9);
+  box-shadow: 0 0 40px rgba(240, 210, 100, 0.7), inset 0 0 40px rgba(220, 180, 80, 0.3);
+}
+.company-card.hunter:hover .company-name {
+  color: #fff4cc;
+}
+
+/* ═══════════════════════════════════════
+   ПОЛЕЗНЫЕ ССЫЛКИ
+   ═══════════════════════════════════════ */
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 22px;
+  background: linear-gradient(90deg,
+    rgba(30, 45, 75, 0.5) 0%,
+    rgba(15, 25, 50, 0.3) 100%);
+  border: 1px solid rgba(120, 200, 255, 0.2);
+  border-left: 3px solid rgba(140, 210, 255, 0.6);
+  border-radius: 4px;
+  text-decoration: none;
+  color: #dce8f5;
+  font-family: 'Georgia', serif;
+  font-size: 0.95em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+.link-btn::before {
+  content: '▸';
+  font-size: 1em;
+  color: #7cc4ff;
+  text-shadow: 0 0 10px rgba(120, 200, 255, 1);
+  transition: transform 0.4s ease;
+  flex-shrink: 0;
+}
+.link-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(115deg,
+    transparent 0%,
+    rgba(140, 210, 255, 0.15) 50%,
+    transparent 100%);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+.link-btn:hover::after { left: 130%; }
+.link-btn:hover {
+  background: linear-gradient(90deg,
+    rgba(40, 65, 110, 0.65) 0%,
+    rgba(20, 35, 70, 0.4) 100%);
+  border-color: rgba(140, 210, 255, 0.4);
+  border-left-color: rgba(180, 220, 255, 1);
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(120, 200, 255, 0.3);
+  transform: translateX(6px);
+}
+.link-btn:hover::before {
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════
+   ГАЛЕРЕЯ
+   ═══════════════════════════════════════ */
+.gallery {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #060c18;
+  border: 1px solid rgba(120, 200, 255, 0.4);
+  box-shadow:
+    0 0 30px rgba(80, 170, 255, 0.25),
+    inset 0 0 40px rgba(60, 130, 220, 0.2);
+}
+.gallery-stage img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: block;
+}
+.gallery-stage img.active {
+  opacity: 1;
+}
+.gallery-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+.gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: linear-gradient(180deg,
+    rgba(100, 180, 255, 0.15) 0%,
+    rgba(60, 130, 220, 0.05) 100%);
+  border: 1px solid rgba(120, 200, 255, 0.5);
+  border-radius: 4px;
+  color: #c8ddf0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-shadow: 0 0 10px rgba(120, 200, 255, 0.7);
+}
+.gallery-btn:hover {
+  background: linear-gradient(180deg,
+    rgba(120, 200, 255, 0.4) 0%,
+    rgba(80, 150, 230, 0.2) 100%);
+  border-color: #a0d0ff;
+  color: #ffffff;
+  box-shadow:
+    0 0 25px rgba(140, 210, 255, 0.7),
+    inset 0 0 20px rgba(100, 180, 255, 0.3);
+  transform: translateY(-2px);
+}
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(120, 200, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.4s ease;
+}
+.gallery-dot:hover {
+  background: rgba(140, 210, 255, 0.7);
+  transform: scale(1.2);
+}
+.gallery-dot.active {
+  background: #7cc4ff;
+  box-shadow:
+    0 0 12px #7cc4ff,
+    0 0 25px rgba(120, 200, 255, 0.7);
+  transform: scale(1.3);
+}
+.gallery-counter {
+  text-align: center;
+  margin-top: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  letter-spacing: 0.25em;
+  color: rgba(120, 200, 255, 0.6);
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════
+   ФУТЕР
+   ═══════════════════════════════════════ */
+.site-footer {
+  position: relative;
+  z-index: 10;
+  padding: 60px 30px 30px;
+  text-align: center;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.6) 100%);
+  border-top: 1px solid rgba(120, 200, 255, 0.15);
+  margin-top: 60px;
+}
+.site-footer-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  display: block;
+  filter:
+    drop-shadow(0 0 20px rgba(140, 200, 255, 1))
+    drop-shadow(0 0 50px rgba(100, 160, 230, 0.6));
+  animation: logoPulse 4s ease-in-out infinite;
+}
+.site-footer-title {
+  margin: 0 0 12px;
+  font-family: 'Georgia', serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #dce8f5;
+  text-shadow: 0 0 15px rgba(140, 210, 255, 0.8);
+}
+.site-footer-sub {
+  margin: 0 0 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8em;
+  letter-spacing: 0.35em;
+  color: rgba(120, 200, 255, 0.7);
+  text-transform: uppercase;
+}
+.site-footer-quote {
+  margin: 25px 0 15px;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 1em;
+  color: rgba(140, 210, 255, 0.9);
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 12px rgba(120, 200, 255, 0.6);
+}
+.site-footer-copy {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7em;
+  color: rgba(140, 160, 200, 0.4);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* адаптив для новых секций */
+@media (max-width: 1000px) {
+  .companies-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .links-grid { grid-template-columns: repeat(2, 1fr); }
+  .company-emblem { width: 120px; height: 120px; }
+}
+@media (max-width: 600px) {
+  .companies-grid { grid-template-columns: 1fr; }
+  .links-grid { grid-template-columns: 1fr; }
+  .company-emblem { width: 140px; height: 140px; }
+  .gallery-controls { gap: 12px; }
+  .gallery-btn { padding: 10px 20px; font-size: 0.75em; letter-spacing: 0.1em; }
+}
