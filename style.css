@@ -179,11 +179,13 @@ html, body {
 }
 .nav-drop-menu {
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;                    /* было: calc(100% + 8px) — убрали зазор */
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   min-width: 260px;
   padding: 10px;
+  padding-top: 18px;            /* ← компенсирует визуальный отступ */
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -197,7 +199,7 @@ html, body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
 }
 .nav-drop:hover .nav-drop-menu {
   opacity: 1;
