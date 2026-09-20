@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Рота "Cerberus" · 104-й Батальон</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ═══ ЦВЕТА CERBERUS — СИНИЕ ═══ */
+  .hero-emblem-ring {
+    border-color: rgba(120, 200, 255, 0.35);
+    box-shadow:
+      0 0 30px rgba(100, 180, 255, 0.3),
+      inset 0 0 30px rgba(100, 180, 255, 0.1);
+  }
+  .hero-emblem-ring::before,
+  .hero-emblem-ring::after {
+    background: #7cc4ff;
+    box-shadow: 0 0 10px #7cc4ff, 0 0 20px rgba(120, 200, 255, 0.8);
+  }
+  .hero-emblem-wrap::before {
+    background: radial-gradient(circle,
+      rgba(120, 200, 255, 0.15) 0%,
+      rgba(100, 180, 255, 0.08) 40%,
+      transparent 70%);
+  }
+  .hero-emblem {
+    filter:
+      drop-shadow(0 0 20px rgba(140, 200, 255, 1))
+      drop-shadow(0 0 50px rgba(100, 160, 230, 0.7))
+      drop-shadow(0 0 90px rgba(60, 120, 200, 0.4));
+  }
+  @keyframes emblemPulse {
+    0%, 100% {
+      filter:
+        drop-shadow(0 0 20px rgba(140, 200, 255, 1))
+        drop-shadow(0 0 50px rgba(100, 160, 230, 0.7));
+    }
+    50% {
+      filter:
+        drop-shadow(0 0 30px rgba(180, 220, 255, 1))
+        drop-shadow(0 0 80px rgba(120, 180, 240, 0.9))
+        drop-shadow(0 0 130px rgba(80, 140, 220, 0.5));
+    }
+  }
+  .hero-title {
+    background: linear-gradient(180deg,
+      #ffffff 0%,
+      #dce8f5 45%,
+      #7cc4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ КОСМИЧЕСКИЙ ФОН ═══ -->
+<div class="bg-nebula"></div>
+<div class="bg-stars-small"></div>
+<div class="bg-stars-big"></div>
+
+<!-- ═══ НАВИГАЦИЯ ═══ -->
+<nav class="site-nav">
+  <a href="index.html" class="nav-brand">
+    <img src="https://i.imgur.com/8Rw0gRg.png" alt="104">
+    <span class="nav-brand-text">Волчья Стая</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Главная</a>
+    <div class="nav-drop">
+      <a href="#">Подразделения</a>
+      <div class="nav-drop-menu">
+        <a href="cerberus.html">Рота "Cerberus"</a>
+        <a href="fenrir.html">Рота "Fenrir"</a>
+        <a href="msc.html">Отряд "Moon Special Company"</a>
+        <a href="hunter.html">Эскадрилья "Hunter"</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <a href="#">Документация</a>
+      <div class="nav-drop-menu">
+        <a href="postanovleniya.html">Постановления</a>
+        <a href="medali.html">Медали</a>
+        <a href="karty.html">Карты</a>
+      </div>
+    </div>
+  </div>
+  <button class="nav-burger" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-emblem-wrap">
+    <div class="hero-emblem-ring"></div>
+    <img class="hero-emblem" src="https://i.imgur.com/d1dhDp7.png" alt="Cerberus">
+  </div>
+
+  <div class="hero-badge">★ 104-й Батальон ★</div>
+
+  <h1 class="hero-title">Рота "Cerberus"</h1>
+
+  <div class="hero-divider"></div>
+
+  <div class="hero-subtitle">Штурмовое подразделение</div>
+
+  <div class="hero-panel">
+    <span class="hero-panel-corner tl"></span>
+    <span class="hero-panel-corner tr"></span>
+    <span class="hero-panel-corner bl"></span>
+    <span class="hero-panel-corner br"></span>
+    <div class="hero-panel-inner-frame"></div>
+
+    <div class="hero-panel-header">
+      <div class="hero-panel-label">
+        <span class="hero-panel-label-dot"></span>
+        О роте
+      </div>
+      <div class="hero-panel-line"></div>
+      <div class="hero-panel-id">CER-104</div>
+    </div>
+
+    <p class="hero-panel-text">
+      <span class="accent">Рота "Cerberus"</span> — штурмовая рота, в которую входят
+      штурмовики-десантники и медики-десантники. Мы — не просто солдаты. Мы — стратегический
+      кулак Республики, созданный для решения задач, которые другим не по плечу.
+    </p>
+  </div>
+
+  <a href="https://discord.gg/M8aXREVvxD" target="_blank" class="hero-btn">
+    ⚔ Присоединиться
+  </a>
+</section>
+
+<!-- ═══ ИНФОРМАЦИЯ ═══ -->
+<section class="section">
+  <div class="section-header">
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+    <h2>Информация</h2>
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+  </div>
+
+  <div class="section-intro">Штурмовое подразделение 104-го батальона</div>
+
+  <div class="roles-list">
+    <div class="role-card blue">
+      <div class="role-card-head">
+        <span class="role-card-icon">⚔️</span>
+        <span class="role-card-name">Боевая задача</span>
+      </div>
+      <p class="role-card-desc">Наша рота — это слаженный механизм, где каждая шестерёнка безупречна. Штурмовые десантники идут в авангарде, медики поддерживают жизни на передовой. Внезапные налёты, штурм позиций, эвакуация — всё это наша работа.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ СТРУКТУРА РОТЫ ═══ -->
+<section class="section">
+  <div class="section-header">
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+    <h2>Структура роты</h2>
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+  </div>
+
+  <!-- Штурмовое направление -->
+  <h3 class="section-subtitle">Штурмовое направление роты</h3>
+  <div class="section-intro" style="margin: 0 auto 40px; font-size: 1em;">Основная ударная мощь роты. Штурмуют и крушат позиции врага.</div>
+
+  <div class="companies-grid">
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/smuJ1vk.png" alt="Клон Командир роты">
+      </div>
+      <h3 class="company-name">Клон Командир роты</h3>
+      <p class="company-desc">Звание WO1 + DM, GH, CO, Cer</p>
+    </div>
+
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/s8COysk.png" alt="Клон Тяжёлый-десантник">
+      </div>
+      <h3 class="company-name">Клон Тяжёлый-десантник</h3>
+      <p class="company-desc">Звание CPL+; SM, DM, PR, GH.</p>
+    </div>
+
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/yPDcjmH.png" alt="Клон Инженер-выжигатель">
+      </div>
+      <h3 class="company-name">Клон Инженер-выжигатель</h3>
+      <p class="company-desc">Звание CPL+; PR, SM, FT, GH, ENG, INF+.</p>
+    </div>
+
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/07vZBJN.png" alt="Клон Рекрут роты">
+      </div>
+      <h3 class="company-name">Клон Рекрут роты</h3>
+      <p class="company-desc">Звание PV1+; PR, GH.</p>
+    </div>
+  </div>
+
+  <!-- Медицинское направление -->
+  <h3 class="section-subtitle" style="margin-top: 60px;">Медицинское направление роты</h3>
+  <div class="section-intro" style="margin: 0 auto 40px; font-size: 1em;">Лечат на поле боя своих союзников и оказывают поддержку в штурме.</div>
+
+  <div class="companies-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 700px; margin: 0 auto;">
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/tr6Cyw0.png" alt="Клон Медик-коммандос">
+      </div>
+      <h3 class="company-name">Клон Медик-коммандос</h3>
+      <p class="company-desc">Звание SGT+; CM, MED, AS, PR, SM, DM, GH, PLT | E | L</p>
+    </div>
+
+    <div class="company-card cerberus" style="cursor: default;">
+      <div class="company-emblem">
+        <img src="https://i.imgur.com/p9SPH4V.png" alt="Клон Медик">
+      </div>
+      <h3 class="company-name">Клон Медик</h3>
+      <p class="company-desc">Звание CPL+; MED, AS, PR, SM, GH.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ИЕРАРХИЯ РОТЫ ═══ -->
+<section class="section">
+  <div class="section-header">
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+    <h2>Иерархия роты</h2>
+    <img class="section-header-icon" src="https://i.imgur.com/8Rw0gRg.png" alt="">
+  </div>
+
+  <h3 class="section-subtitle">Командующий состав роты</h3>
+
+  <div class="roles-list">
+    <div class="role-card purple">
+      <div class="role-card-head">
+        <span class="role-card-icon">⭐</span>
+        <span class="role-card-name">CO | Cer — Командир роты</span>
+      </div>
+      <p class="role-card-desc">Занимается контролем за вверенным ему составом, набор бойцов в роту, повышение/понижение своего состава в должности.</p>
+    </div>
+
+    <div class="role-card gray">
+      <div class="role-card-head">
+        <span class="role-card-icon">🛡️</span>
+        <span class="role-card-name">DEP | Cer — Заместитель командира</span>
+      </div>
+      <p class="role-card-desc">Выполняет обязанности командира в его отсутствии, помогает командиру. Делится на Dep S (штурм) и Dep M (медицина).</p>
+    </div>
+
+    <div class="role-card blue">
+      <div class="role-card-head">
+        <span class="role-card-icon">✦</span>
+        <span class="role-card-name">OFC | Cer — Клон-офицер</span>
+      </div>
+      <p class="role-card-desc">Ответственный за аттестацию и подготовку бойцов своего направления.</p>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Основной состав роты</h3>
+
+  <div class="roles-list">
+    <div class="role-card blue">
+      <div class="role-card-head">
+        <span class="role-card-icon">⚔️</span>
+        <span class="role-card-name">SOL | Cer — Полноценный боец</span>
+      </div>
+      <p class="role-card-desc">Участвует в полноценной работе роты, является наиболее численной единицей в роте. Штат — неограничен.</p>
+    </div>
+
+    <div class="role-card green">
+      <div class="role-card-head">
+        <span class="role-card-icon">🎯</span>
+        <span class="role-card-name">R | Cer — Рекрут</span>
+      </div>
+      <p class="role-card-desc">Новоприбывший боец, только начавший прохождение курсантки для полноценного повышения. Штат — неограничен.</p>
+    </div>
+  </div>
+
+  <h3 class="section-subtitle">Максимальная численность роты</h3>
+
+  <div class="hero-panel" style="max-width: 100%; margin: 0;">
+    <span class="hero-panel-corner tl"></span>
+    <span class="hero-panel-corner tr"></span>
+    <span class="hero-panel-corner bl"></span>
+    <span class="hero-panel-corner br"></span>
+    <p class="hero-panel-text" style="text-align: center;">
+      <span class="accent">6</span> штурмовиков · <span class="accent">4</span> медика · <span class="accent">2</span> инженера · <span class="accent">3</span> рекрута
+    </p>
+  </div>
+</section>
+
+<!-- ═══ ФУТЕР ═══ -->
+<footer class="site-footer">
+  <img class="site-footer-logo" src="https://i.imgur.com/8Rw0gRg.png" alt="104 Батальон">
+  <h3 class="site-footer-title">104-й Батальон «Волчья Стая»</h3>
+  <p class="site-footer-sub">★ Великая Армия Республики ★</p>
+  <p class="site-footer-quote">«Да пребудет с тобой Сила»</p>
+  <p class="site-footer-copy">© 104th Battalion · Holo-Tac System v2.4</p>
+</footer>
+
+<script>
+  /* ═══ Навигация — при скролле ═══ */
+  (function() {
+    const nav = document.querySelector('.site-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
